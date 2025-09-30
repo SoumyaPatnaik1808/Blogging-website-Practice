@@ -7,10 +7,16 @@
         body {
             font-family: 'Georgia', serif;
             line-height: 1.6;
-			letter-spacing: 0.3px;
             color: #333;
             background-color: #fafafa;
         }
+        @keyframes rock {
+			0%{transform:translateY(0px); }
+			50%{transform:translateY(-8px); }
+			80%{transform:translateY(8px); }
+			100%{transform:translateY(0px); }
+		}
+
 
         header {
             background-color: #fff;
@@ -19,6 +25,9 @@
             position: sticky;
             top: 0;
             z-index: 100;
+			animation-name: rock;
+			animation-duration:4s;
+			animation-iteration-count:1;
         }
         header:hover {
 			color:green;
@@ -183,15 +192,4 @@ a, button, .card, input, textarea {
 
 a:hover, button:hover {
     transform: translateY(-2px);
-}
-
-.blog-card {
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.blog-card:hover {
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
-    transform: translateY(-4px);
 }
